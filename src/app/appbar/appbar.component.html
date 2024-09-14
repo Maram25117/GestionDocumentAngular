@@ -1,0 +1,18 @@
+<div class="appbar-container">
+    <div class="appbar">
+      <img src="assets/document.png" alt="Logo" class="logo" />
+      <div class="title">Gestion des documents</div>
+      <div class="spacer"></div>
+      <nav>
+        <!--<a [routerLink]="'/home'" class="link">Ajout et Liste</a>--> <!--lorsque on ne faisait pas / ca sera relative root-->
+       <!--<a [routerLink]="'/recherche'" class="link">Recherche</a> --><!--absolute route-->
+       <!-- <a [routerLink]="'/classe'" class="link">Classe</a>
+        <a [routerLink]="'/document'" class="link">Document</a>-->
+        <button class="login-logout-button" (click)="handleLoginLogout()">
+          {{ isLoggedIn ? 'Déconnexion' : 'Connexion' }}
+        </button>
+      </nav>
+    </div>
+  </div>
+  
+  
