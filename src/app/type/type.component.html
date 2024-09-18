@@ -1,0 +1,23 @@
+<div *ngIf="matiereId">
+  <app-appbar></app-appbar>
+  <div class="background"></div>
+  <h2><b><ins>{{ matiereName }}</ins></b></h2>
+  <div class="file-type-buttons">
+    <button class="file-button" (click)="navigateToFileType('cours')"><b>Cours</b></button>
+    <button class="file-button" (click)="navigateToFileType('td')"><b>TD</b></button>
+    <button class="file-button" (click)="navigateToFileType('tp')"><b>TP</b></button>
+  </div>
+  <div *ngIf="files.length > 0">
+    <h3>Files:</h3>
+    <ul>
+      <li *ngFor="let file of files">{{ file.name }}</li>
+    </ul>
+  </div>
+  <div *ngIf="files.length === 0 && fileType">
+    <p>No files found for type: {{ fileType }}</p>
+  </div>
+</div>
+<div *ngIf="matiereId === null">
+  <p>No valid matiereId provided.</p>
+</div>
+

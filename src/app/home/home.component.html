@@ -1,0 +1,19 @@
+<div class="Home">
+    <app-appbar></app-appbar>
+    <div class="background"></div> <!-- Barre de navigation ou d'en-tête -->
+  
+    <!-- Conteneur pour la liste des matières -->
+    <div *ngIf="matieres.length > 0" class="matiere-grid">
+      <!--<div *ngFor="let matiere of matieres" class="matiere-card" (click)="navigateToMatiereDocuments(matiere.id)">
+        <h3><b>{{ matiere.nom }}</b></h3>
+      </div>-->
+      <button *ngFor="let matiere of matieres" class="file-button" (click)="navigateToMatiereDocuments(matiere.id)" ><b>{{ matiere.nom }}</b></button>
+    </div>
+  
+    <!-- Message si aucune matière n'est trouvée -->
+    <div *ngIf="matieres.length === 0">
+      <p>Aucune matière trouvée.</p>
+    </div>
+  </div>
+  
+  

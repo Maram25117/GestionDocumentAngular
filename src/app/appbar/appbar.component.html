@@ -4,14 +4,44 @@
       <div class="title">Gestion des documents</div>
       <div class="spacer"></div>
       <nav>
-        <!--<a [routerLink]="'/home'" class="link">Ajout et Liste</a>--> <!--lorsque on ne faisait pas / ca sera relative root-->
-       <!--<a [routerLink]="'/recherche'" class="link">Recherche</a> --><!--absolute route-->
-       <!-- <a [routerLink]="'/classe'" class="link">Classe</a>
-        <a [routerLink]="'/document'" class="link">Document</a>-->
+        <!-- Icône pour ajouter matière -->
+        <button *ngIf="userRole === 'ADMIN'" (click)="toggleMatiereForm()" class="appbar-button">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> Ajouter Matière
+        </button>
+  
+        <!-- Icône pour afficher la liste des matières -->
+        <button (click)="toggleMatiereList()" class="appbar-button">
+          <i class="fa fa-list" aria-hidden="true"></i> Afficher Matières
+        </button>
+
+        <button class="login-logout-button" (click)="navigateToHome()">Acceuil</button>
+         
         <button class="login-logout-button" (click)="handleLoginLogout()">
           {{ isLoggedIn ? 'Déconnexion' : 'Connexion' }}
         </button>
       </nav>
+    </div>
+  </div>
+  
+  <!-- Formulaire pour ajouter une matière -->
+  <div *ngIf="showMatiereForm" class="matiere-form">
+    <label for="matiereNom">Nom de la Matière:</label>
+    <input id="matiereNom" [(ngModel)]="matiereNom" type="text" placeholder="Entrez le nom de la matière" />
+    <button (click)="addMatiere()">Confirmer</button>
+  </div>
+  
+  <!-- Liste des matières -->
+  <div class="matiere-list" *ngIf="isMatiereListVisible">
+    <h3>Liste des matières</h3>
+    <ul>
+      <li *ngFor="let matiere of matieres">
+        <!--<a (click)="navigateToMatiereDocuments(matiere.id)">{{ matiere.nom }}</a>-->
+        <a (click)="navigateToMatiereDocuments(matiere.id )">{{ matiere.nom }}</a>
+        <button *ngIf="userRole === 'ADMIN'" (click)="deleteMatiere(matiere.id)">Supprimer</button>
+      </li>
+    </ul>
+    <div *ngIf="matieres.length === 0">
+      <p>Aucune matière trouvée.</p>
     </div>
   </div>
   

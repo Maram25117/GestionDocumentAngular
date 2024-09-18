@@ -11,7 +11,11 @@ import { SafeUrlPipe } from './safe-url.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { AppbarComponent } from './appbar/appbar.component';
-
+import { MatiereComponent } from './matiere/matiere.component';
+import { HomeComponent } from './home/home.component';
+import { TypeComponent } from './type/type.component';
+import { BarComponent } from './bar/bar.component';
+import { MatiereService } from './matiere.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { AppbarComponent } from './appbar/appbar.component';
     LoginComponent,
     RegisterComponent,
     SafeUrlPipe,
-    AppbarComponent
+    AppbarComponent,
+    MatiereComponent,
+    HomeComponent,
+    TypeComponent,
+    BarComponent
   ],
   imports: [
     FormsModule,
@@ -31,7 +39,7 @@ import { AppbarComponent } from './appbar/appbar.component';
     MatIconModule
   ],
   providers: [
-    
+    [ MatiereService ],
     // Add other providers if needed
   ],
   bootstrap: [AppComponent]

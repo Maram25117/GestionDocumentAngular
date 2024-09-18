@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   constructor(private router: Router) { }
-
+title : string ="Gestion Document";
   logout() {
     // Supprimer les informations de l'utilisateur du localStorage
     localStorage.removeItem('currentUser');

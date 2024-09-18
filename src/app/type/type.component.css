@@ -1,0 +1,57 @@
+.background {
+    background-image: url('/assets/photo1.jpg'); /* Assurez-vous que le chemin est correct */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .overlay {
+    position: relative;
+    z-index: 1;
+  }
+
+.file-type-buttons {
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+}
+  
+  .file-button {
+    background-color: white;
+    color: #1976d2; /* Couleur bleue pour le texte */
+    border: 5px solid #1976d2; /* Bordure bleue */
+    padding: 100px 100px; /* Agrandit les boutons */
+    margin: 0 10px; /* Ajoute de l'espace entre les boutons */
+    font-size: 40px; /* Taille de police plus grande */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Effet de transition */
+  }
+  
+  .file-button:hover {
+    background-color: #1976d2;
+    color: white; /* Inversion des couleurs au survol */
+  }
+  
+  h2 {
+    font-size: 30px; /* Centre le titre */
+    margin-top: 70px;
+    margin-left: 8px;
+    margin-bottom: 200px;
+    color: white;
+  }
+  
+  ul {
+    list-style: none; /* Supprime les puces des listes */
+    padding-left: 0;
+    text-align: center;
+  }
+  
+  li {
+    font-size: 18px;
+  }
+  

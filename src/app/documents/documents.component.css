@@ -1,6 +1,7 @@
 .background {
     background-size: cover;
     background-position: center;
+    background-image: url('/assets/photo1.jpg'); /* Assurez-vous que le chemin est correct */
     filter: blur(8px);
     position: fixed;
     top: 0;
@@ -53,6 +54,7 @@
     justify-content: center; /* Centre horizontalement */
     align-items: center; /* Centre verticalement */
     margin-left: 5px; /*espace entre les boutons*/
+    /*margin-bottom: 16px;*/
   }
   
   .btn-primary:hover {
@@ -114,3 +116,7 @@
     margin-top: 20px;
   }
   
+p{
+  margin-top: 10px;
+  align-items: center;
+}
